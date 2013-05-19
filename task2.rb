@@ -26,7 +26,7 @@ module MailSort
     def most_popular
         counts_hash = {}
         @mail.each do |m|
-            counts_hash[m.hash]= counts_hash[m.hash].to_i + 1
+            counts_hash[m.hash] = counts_hash[m.hash].to_i + 1
         end
         max_hash=counts_hash.max_by {|k,v| v}
         adress = @mail.find{|m| m.hash == max_hash[0]}
